@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D0EAF4B2-6B2E-4524-8F24-6167A798B74E}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Terrain</RootNamespace>
+    <AssemblyName>Terrain</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="OpenTK.GLControl">
+      <HintPath>..\..\opentk\Binaries\OpenTK\Release\OpenTK.GLControl.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenTK">
+      <HintPath>..\..\opentk\Binaries\OpenTK\Release\OpenTK.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Game.cs" />
+    <Compile Include="Camera.cs" />
+    <Compile Include="HUD.cs" />
+    <Compile Include="Interfaces\ILoadable.cs" />
+    <Compile Include="Interfaces\IRenderable.cs" />
+    <Compile Include="Interfaces\IUpdateable.cs" />
+    <Compile Include="Interfaces\IResizeable.cs" />
+    <Compile Include="Extensions\ColorExtensions.cs" />
+    <Compile Include="Terrain\Terrain.cs" />
+    <Compile Include="Primitives\VBO.cs" />
+    <Compile Include="Terrain\TerrainPage.cs" />
+    <Compile Include="Primitives\Frustum.cs" />
+    <Compile Include="Primitives\Cube.cs" />
+    <Compile Include="Util.cs" />
+    <Compile Include="Primitives\VBO2D.cs" />
+    <Compile Include="Skybox.cs" />
+    <Compile Include="Noise.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Interfaces\" />
+    <Folder Include="Assets\" />
+    <Folder Include="Extensions\" />
+    <Folder Include="Terrain\" />
+    <Folder Include="Primitives\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Assets\NOISE.jpg" />
+    <EmbeddedResource Include="Assets\SNOW.jpg" />
+    <EmbeddedResource Include="Assets\WATER.jpg" />
+    <EmbeddedResource Include="Assets\ROCK.jpg" />
+    <EmbeddedResource Include="Assets\LIGHT_GRASS.jpg" />
+    <EmbeddedResource Include="Assets\DARK_GRASS.jpg" />
+    <EmbeddedResource Include="Assets\HEIGHTMAP.jpg" />
+    <EmbeddedResource Include="Assets\HEIGHTMAP_2_512.jpg" />
+    <EmbeddedResource Include="Assets\HEIGHTMAP_2_1024.jpg" />
+    <EmbeddedResource Include="Assets\HEIGHTMAP_2_256.jpg" />
+    <EmbeddedResource Include="Assets\TERRAIN_1024.jpg" />
+    <EmbeddedResource Include="Assets\MUD_2.jpg" />
+    <EmbeddedResource Include="Assets\MUD_1.jpg" />
+    <EmbeddedResource Include="Assets\DIRT.jpg" />
+    <EmbeddedResource Include="Assets\HEIGHTMAP_3_1024.jpg" />
+    <EmbeddedResource Include="Assets\DARK_GRASS_2.jpg" />
+    <EmbeddedResource Include="Assets\SAND.jpg" />
+    <EmbeddedResource Include="Assets\SKYBOX.jpg" />
+  </ItemGroup>
+</Project>
