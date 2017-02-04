@@ -166,12 +166,12 @@ namespace Terrain {
 		}
 
 		public bool Visible() {	 
-			return Camera.Instance.Frustum.Contains(
+			return Camera.Instance?.Frustum?.Contains(
 				new Vector3(X * terrain.gridSpacing, terrain.HeightAt(X, Z), Z * terrain.gridSpacing),
 				new Vector3(X * terrain.gridSpacing + WIDTH, terrain.HeightAt(X + WIDTH, Z), Z * terrain.gridSpacing),
 				new Vector3(X * terrain.gridSpacing, terrain.HeightAt(X, Z + HEIGHT), Z * terrain.gridSpacing + HEIGHT),
 				new Vector3(X * terrain.gridSpacing + WIDTH, terrain.HeightAt(X + WIDTH, Z + HEIGHT), Z * terrain.gridSpacing + HEIGHT)
-			);
+			) ?? false;
 		}
 	}
 }
