@@ -167,6 +167,39 @@ namespace Terrain {
 				GL.BindBuffer(BufferTarget.ElementArrayBuffer, indexObject);
 				GL.DrawElements(PrimitiveType, numElements, DrawElementsType.UnsignedInt, IntPtr.Zero);
 			}
+			
+			
+			// Disable States - due to access violation
+
+			if (normalObject != -1)
+			{
+				GL.DisableClientState(ArrayCap.NormalArray);
+			}
+
+			if (colorObject != -1)
+			{
+				GL.DisableClientState(ArrayCap.ColorArray);
+			}
+
+			if (colorVectorThreeObject != -1)
+			{
+				GL.DisableClientState(ArrayCap.ColorArray);
+			}
+
+			if (texcoordsObject != -1)
+			{
+				GL.DisableClientState(ArrayCap.TextureCoordArray);
+			}
+
+			if (arrayObject != -1)
+			{
+				GL.DisableClientState(ArrayCap.VertexArray);
+			}
+
+			if (indexObject != -1)
+			{
+				GL.BindBuffer(BufferTarget.ElementArrayBuffer, 0);
+			}
 		}
 	}
 }
